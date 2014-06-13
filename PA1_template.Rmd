@@ -1,6 +1,6 @@
 ---
 title: "PA1_template"
-author: "Javier Delgado Gallego"
+author: "jdelgastat"
 date: "Monday, June 09, 2014"
 output: html_document
 ---
