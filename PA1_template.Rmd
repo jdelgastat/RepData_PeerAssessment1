@@ -54,35 +54,3 @@ rowsNA <- nrow(activity) - nrow(activity_clean)
 The total number of rows with missing values in the dataset is `r rowsNA` rows.
 
 
-##### 8 Devise a strategy for filling in all of the missing values in the dataset
-
-
-
-
-
-##### 9 New dataset that is equal to the original dataset but with the missing data filled in
-
-
-
-
-##### 10 Histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day
-
-
-
-
-
-##### 11 New factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day
-
-
-
-
-
-
-
-##### 12 Panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis)
-
-
-
-
-
-
