@@ -1,20 +1,88 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "PA1_template"
+author: "Javier Delgado Gallego"
+date: "Monday, June 09, 2014"
+output: html_document
+---
+
+##### 1 Loading the data
+
+```{r}
+activity <- read.table(file = "activity.csv", header = T, sep = ",", colClasses = c("numeric", "Date", "factor"))
+```
+
+##### 2 Histogram of number of steps taken each day
+```{r}
+hist(x = activity$steps, breaks = 50, main = "total number of steps taken each day", xlab = "Steps", col = "lightblue")
+```
+
+##### 3 Mean of number of steps taken per day
+```{r}
+meansteps <- mean(activity$steps, na.rm = T)
+```
+The mean of steps taken per day is `r meansteps` steps.
+
+##### 4 Median of number of steps taken per day
+```{r}
+mediansteps <- median(activity$steps, na.rm = T)
+```
+The median of steps taken per day is `r mediansteps` steps.
+
+##### 5 Time series plot of the 5-minute interval and the average number of steps taken, averaged across all days
+```{r}
+activity_clean <- na.omit(object = activity)
+mean_steps_by_interval <- as.numeric(lapply(split(x = activity_clean$steps, f = activity_clean$interval), mean))
+plot(mean_steps_by_interval, type = "l", xlab = "5 minutes interval", ylab = "Mean of steps across all days", main = "Average number of steps by 5 minutes interval" )
+```
+
+##### 6 Five minute interval with maximum number of steps across all the days
+```{r}
+intervals <- sort(as.numeric(levels(activity$interval)))
+maxinterval <- data.frame(intervals, mean_steps_by_interval)
+max <- maxinterval[(mean_steps_by_interval == max(maxinterval$mean_steps_by_interval)), ]
+maximo <- as.character(max[[1]])
+h <- substr(x = maximo, start = 1, stop = 2)
+m <- substr(x = maximo, start = 3, stop = 4)
+hm <- paste(h, ":", m, sep = "")
+```
+The 5 minutes interval with maximum number of steps across all the days begins at `r hm`.
+
+##### 7 The total number of rows with missing values in the dataset
+```{r}
+rowsNA <- nrow(activity) - nrow(activity_clean)
+```
+The total number of rows with missing values in the dataset is `r rowsNA` rows.
 
 
-## Loading and preprocessing the data
+##### 8 Devise a strategy for filling in all of the missing values in the dataset
 
 
 
-## What is mean total number of steps taken per day?
+
+
+##### 9 New dataset that is equal to the original dataset but with the missing data filled in
 
 
 
-## What is the average daily activity pattern?
+
+##### 10 Histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day
 
 
 
-## Imputing missing values
+
+
+##### 11 New factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day
 
 
 
-## Are there differences in activity patterns between weekdays and weekends?
+
+
+
+
+##### 12 Panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis)
+
+
+
+
+
+
