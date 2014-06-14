@@ -50,7 +50,7 @@ plot(mean_steps_by_interval, type = "l", xlab = "5 minutes interval", ylab = "Me
     main = "Average number of steps by 5 minutes interval")
 ```
 
-![plot of chunk time series plot](figure/time_series_plot.png) 
+![plot of chunk time_series_plot](figure/time_series_plot.png) 
 
 
 ##### 6 Five minute interval with maximum number of steps across all the days
@@ -153,6 +153,6 @@ plot(mean_steps_by_weekend, type = "l", xlab = "5 minutes interval", ylab = "Mea
     main = "Average number of steps by 5 minutes interval")
 ```
 
-![plot of chunk panel plot](figure/panel_plot.png) 
+![plot of chunk panel_plot](figure/panel_plot.png) 
 
 

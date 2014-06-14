@@ -29,7 +29,7 @@ mediansteps <- median(activity$steps, na.rm = T)
 The median of steps taken per day is `r mediansteps` steps.
 
 ##### 5 Time series plot of the 5-minute interval and the average number of steps taken, averaged across all days
-```{r time series plot, fig.height=5}
+```{r time_series_plot, fig.height=5}
 activity_clean <- na.omit(object = activity)
 mean_steps_by_interval <- as.numeric(lapply(split(x = activity_clean$steps, f = activity_clean$interval), mean))
 plot(mean_steps_by_interval, type = "l", xlab = "5 minutes interval", ylab = "Mean of steps across all days", main = "Average number of steps by 5 minutes interval" )
@@ -88,7 +88,7 @@ actbyday <- cbind(activity_plus, day)
 ```
 
 ##### 13 Panel plot containing a time series plot of the 5-minute interval and the average number of steps taken (averaged across all weekday days or weekend days).
-```{r panel plot, fig.height=8}
+```{r panel_plot, fig.height=8}
 actbyweekday <- subset(actbyday, subset=actbyday$day == "weekday")
 mean_steps_by_weekday <- as.numeric(lapply(split(x = actbyweekday$stepsorig, f = actbyweekday$interval), mean))
 actbyweekend <- subset(actbyday, subset=actbyday$day == "weekend")
