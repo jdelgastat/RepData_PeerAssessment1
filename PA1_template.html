@@ -284,7 +284,7 @@ day[day %in% c(&quot;Sat&quot;, &quot;Sun&quot;)] &lt;- &quot;weekend&quot;
 actbyday &lt;- cbind(activity_plus, day)
 </code></pre>
 
-<h5>13 Panel plot containing a time series plot of the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days</h5>
+<h5>13 Panel plot containing a time series plot of the 5-minute interval and the average number of steps taken (averaged across all weekday days or weekend days).</h5>
 
 <pre><code class="r">actbyweekday &lt;- subset(actbyday, subset = actbyday$day == &quot;weekday&quot;)
 mean_steps_by_weekday &lt;- as.numeric(lapply(split(x = actbyweekday$stepsorig, 

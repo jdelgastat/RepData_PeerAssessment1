@@ -78,7 +78,7 @@ mediansteps2 <- median(activity_plus$stepsorig, na.rm = T)
 ```
 The mean of steps taken per day is `r mediansteps2` steps.
 
-##### 12 New factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day
+##### 12 New factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 ```{r}
 Sys.setlocale("LC_TIME","English")
 day <- weekdays(activity_plus$date, abbreviate=T)
@@ -87,7 +87,7 @@ day[day %in% c("Sat", "Sun")] <- "weekend"
 actbyday <- cbind(activity_plus, day)
 ```
 
-##### 13 Panel plot containing a time series plot of the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days
+##### 13 Panel plot containing a time series plot of the 5-minute interval and the average number of steps taken (averaged across all weekday days or weekend days).
 ```{r}
 actbyweekday <- subset(actbyday, subset=actbyday$day == "weekday")
 mean_steps_by_weekday <- as.numeric(lapply(split(x = actbyweekday$stepsorig, f = actbyweekday$interval), mean))
