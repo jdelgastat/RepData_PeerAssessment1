@@ -21,7 +21,7 @@ hist(x = activity$steps, breaks = 50, main = "total number of steps taken each d
     xlab = "Steps", col = "lightblue")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+![plot of chunk histogram](figure/histogram.png) 
 
 
 ##### 3 Mean of number of steps taken per day
@@ -50,7 +50,7 @@ plot(mean_steps_by_interval, type = "l", xlab = "5 minutes interval", ylab = "Me
     main = "Average number of steps by 5 minutes interval")
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk time series plot](figure/time_series_plot.png) 
 
 
 ##### 6 Five minute interval with maximum number of steps across all the days
@@ -93,7 +93,7 @@ hist(x = activity_plus$stepsorig, breaks = 50, main = "total number of steps tak
     xlab = "Steps", col = "red")
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9.png) 
+![plot of chunk histogram2](figure/histogram2.png) 
 
 
 ##### 10 New mean of number of steps taken per day
@@ -112,7 +112,7 @@ mediansteps2 <- median(activity_plus$stepsorig, na.rm = T)
 
 The mean of steps taken per day is 0 steps.
 
-##### 12 New factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day
+##### 12 New factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 ```r
 Sys.setlocale("LC_TIME", "English")
@@ -153,6 +153,6 @@ plot(mean_steps_by_weekend, type = "l", xlab = "5 minutes interval", ylab = "Mea
     main = "Average number of steps by 5 minutes interval")
 ```
 
-![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13.png) 
+![plot of chunk panel plot](figure/panel_plot.png) 
 
 
